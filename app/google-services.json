@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "360200407855",
+    "project_id": "rezepteapp02",
+    "storage_bucket": "rezepteapp02.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:360200407855:android:2ab83aa10fc6b899fe2fda",
+        "android_client_info": {
+          "package_name": "de.medieninformatik.rezepteapp02"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "360200407855-lq0omcvtsndtubd683spn7rgf15cfvt9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVpgx7Mo3zhiWtgev3Hv12vIoSdm6yVD8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "360200407855-lq0omcvtsndtubd683spn7rgf15cfvt9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
