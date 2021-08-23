@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">RezepteApp02</string>
+
+
+    <string name="recipeName">Recipe Name</string>
+    <string name="zutaten">Zutaten</string>
+    <string name="ingredients">Ingredients</string>
+
+
 </resources>
