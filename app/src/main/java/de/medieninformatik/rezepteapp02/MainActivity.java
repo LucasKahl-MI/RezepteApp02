@@ -28,12 +28,27 @@ import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author Lucas Kahl m27606
+ * Semesterabgabe Prog4 Android SoSe 2021
+ */
+
 public class MainActivity extends AppCompatActivity {
 
-    private Button logout;
 
+    /**
+     * Inizialisierung notwendiger Parameter
+     */
+    private Button logout;
     RecyclerView recyclerView;
     List<Rezepte> rezepteList = new ArrayList<>();
+
+    /**
+     * Hier werden aktuell die Rezepte eingetragen und anschließend mittels .add einer Array-List
+     * hinzugefügt.
+     * perspektivisch plane ich die Anbindung an eine Online-Datenbank, um Rezepte von dort aus
+     * lesen zu können und um das Hinzufügen neuer Rezepte direkt aus der App zu ermöglichen
+     */
 
     Rezepte fisch01 = new Rezepte("Lachstatar", "250 \tg \tLachs (geräuchert)\n" +
             "0.5 \tBund \tDill\n" +
@@ -150,11 +165,16 @@ public class MainActivity extends AppCompatActivity {
             "Lecker Lecker", "Auspacken, schneiden, belegen, fertig!", R.drawable.salat01_thumb);
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        /**
+         * Logout Butten wird angesprochen und über OnClickListener wird die Funktionalität implementiert
+         * Nutzer erhält bei erfolgreichem Logout eine Toast-Nachricht
+         */
         logout = findViewById(R.id.bt_logout);
 
         logout.setOnClickListener(new View.OnClickListener() {
@@ -167,10 +187,13 @@ public class MainActivity extends AppCompatActivity {
         });
 
         /**
-         * Hier muss noch die richtige ID hinterlegt werden !!!!
+         * RecyclerView wird mittels Id im Layout angesprochen
          */
         recyclerView = findViewById(R.id.recyclesView_id2);
 
+        /**
+         * Befüllung der Liste an Rezepten
+         */
         rezepteList.add(fisch01);
         rezepteList.add(fleisch01);
         rezepteList.add(fleisch02);
@@ -183,6 +206,9 @@ public class MainActivity extends AppCompatActivity {
         rezepteList.add(pasta01);
 
 
+        /**
+         * RecyclerView wird dem Layout angefügt
+         */
         RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, rezepteList);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

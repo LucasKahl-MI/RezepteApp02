@@ -1,7 +1,19 @@
 package de.medieninformatik.rezepteapp02;
 
+/**
+ * @author Lucas Kahl m27606
+ * Semesterabgabe Prog4 Android SoSe 2021
+ */
+
 public class Rezepte {
 
+    /**
+     * Rezepte Klasse
+     * Objekte der Klasse dienen zur Speicherung der Bestandteile der Rezepte
+     */
+    /**
+     * Initialisierung der notwendigen Parameter
+     */
     private String RecipeName;
     private String RecipeIngredients;
     private String RecipeSubtitle;
@@ -9,6 +21,14 @@ public class Rezepte {
     private int Thumbnail;
 
 
+    /**
+     * Konstruktor
+     * @param RecipeName
+     * @param RecipeIngredients
+     * @param RecipeSubtitle
+     * @param Recipe
+     * @param Thumbnail
+     */
     public Rezepte(String RecipeName, String RecipeIngredients, String RecipeSubtitle ,String Recipe, int Thumbnail) {
         this.RecipeName = RecipeName;
         this.RecipeIngredients = RecipeIngredients;
@@ -17,6 +37,14 @@ public class Rezepte {
         this.Thumbnail = Thumbnail;
     }
 
+    /**
+     * Getter und Setter Methodern zum Lesen und Schreiben der Eigenschaften
+     *
+     * Aktuell werden nur die Getter benutzt.
+     * Setter werden interessant wenn die Anbindung an die Datenbank implementiert wurde,
+     * um neue Rezepte zu schreiben.
+     * @return
+     */
     public String getRecipeName() {
         return RecipeName;
     }
