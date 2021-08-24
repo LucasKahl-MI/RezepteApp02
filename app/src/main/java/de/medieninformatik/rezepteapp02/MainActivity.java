@@ -158,11 +158,32 @@ public class MainActivity extends AppCompatActivity {
             "Abgetropfte Nudeln und Paprika mit Sud und Pesto verrühren und sofort anrichten.",
             R.drawable.pasta02pestoverde_thumb);
 
-    Rezepte pasta02 = new Rezepte("Pasta Carbonara", "200g Lachs, 1 Priese Salz, 1 Priese Pfeffer, frisches Mischbrot",
-            "Lecker Lecker", "Auspacken, schneiden, belegen, fertig!", R.drawable.pasta01carbonara_thumb);
+    Rezepte pasta02 = new Rezepte("Pasta Carbonara", "250 g Pasta\n" +
+            "150 g Speck\n" +
+            "2 Eier\n" +
+            "200 ml Sahne Alternativ Milch\n" +
+            "80 g Parmesan gerieben\n" +
+            "Salz, Pfeffer, Muskat",
+            "Herzhaft, würzig, parmesanig.", "Spaghetti nach Packungsanweisung al dente garen.\n" +
+            "In der Zwischenzeit Speck in einer großen Pfanne braten, beiseite stellen.\n" +
+            "Eier, Sahne und Parmesan verquirlen. Mit Salz, Pfeffer und Muskat würzen.\n" +
+            "Nudeln direkt aus dem Nudelwasser zum Speck in die Pfanne geben und Eimischung hinzufügen. Alles vermischen, dann bei sehr kleiner Hitze unter Rühren vermischen, bis die Sauce anzieht. Noch einmal abschmecken und genießen.", R.drawable.pasta01carbonara_thumb);
 
-    Rezepte salat01 = new Rezepte("Nudelsalat italiano", "200g Lachs, 1 Priese Salz, 1 Priese Pfeffer, frisches Mischbrot",
-            "Lecker Lecker", "Auspacken, schneiden, belegen, fertig!", R.drawable.salat01_thumb);
+    Rezepte salat01 = new Rezepte("Nudelsalat italiano", "500 g Farfalle\n" +
+            "40 g Pinienkerne\n" +
+            "250 g Feta\n" +
+            "250 g Cocktailtomaten\n" +
+            "1 Bund Basilikum\n" +
+            "20 ml Olivenöl\n" +
+            "1 Prise Salz\n" +
+            "1 Prise Pfeffer (schwarz, gemahlen)\n" +
+            "200 g Crème fraîche\n" +
+            "1 Stk Knoblauchzehen (zerdrückt) ",
+            "Der Hit zu jedem Grillfest", "Die Nudeln werden in kochendem Salzwasser laut Packungsanleitung bissfest gekocht, anschließend werden sie in einem Sieb abgeseiht und mit dem Öl übergossen.\n" +
+            "Das Ganze gut umrühren damit die Nudeln nicht aneinander kleben bleiben. In der Zwischenzeit werden die Tomaten gewaschen und halbiert.\n" +
+            "Im Anschluss werden die Basilikumblätter vom Stängel gezupft und fein gehackt. Die Crème fraîche wird mit Salz, Knoblauch sowie Pfeffer gut abgeschmeckt.\n" +
+            "Dann werden die Pinienkerne in einer Pfanne ohne Öl für 3 Minuten angebraten, dabei immer wieder umrühren damit nichts anbrennt.\n" +
+            "Zum Schluss werden alle Zutaten in einer Schüssel vermengt und der Feta wird mit den Händen grob dazu gebröselt.\n", R.drawable.salat01_thumb);
 
 
 
@@ -200,6 +221,8 @@ public class MainActivity extends AppCompatActivity {
         rezepteList.add(pasta01);
         rezepteList.add(pasta02);
         rezepteList.add(salat01);
+
+        //Wiederholung der Rezepte zum Test der Scrollbarkeit
         rezepteList.add(fisch01);
         rezepteList.add(fleisch01);
         rezepteList.add(fleisch02);
@@ -219,6 +242,7 @@ public class MainActivity extends AppCompatActivity {
      * Öffnet die Start Activity
      */
     private void backToStart() {
+
         Intent intent = new Intent(this, StartActivity.class);
         startActivity(intent);
         finish();

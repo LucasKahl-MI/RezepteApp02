@@ -80,9 +80,13 @@ public class RegisterActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
                     Toast.makeText(RegisterActivity.this,"Registrierung erfolgreich!" , Toast.LENGTH_SHORT).show();
-                    Log.d("success", "Registrierung erfolgreich");
+
+                    //Logging zu Informationszwecken, dass Registrierung erfolgreich war
+                    Log.i("success_registration", "Registrierung erfolgreich");
                     openMainActivity();
                 }else {
+                    //Error-Logging
+                    Log.e("error_registration","Registrierung konnte nicht erfolgreich durchgeführt werden! | Möglicherweise Netzwerkprobleme");
                     Toast.makeText(RegisterActivity.this,"Registrierung fehlgeschlagen!" , Toast.LENGTH_SHORT).show();
                 }
             }
@@ -92,7 +96,9 @@ public class RegisterActivity extends AppCompatActivity {
 
     private void openMainActivity() {
         Intent intent = new Intent(this, MainActivity.class);
+        Log.i("success", "Erfolgreicher Übergang zur MainActivity nach erfolgreicher Registrierung.");
         startActivity(intent);
+
         finish();
     }
 }
