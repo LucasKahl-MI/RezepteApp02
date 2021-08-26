@@ -38,6 +38,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         this.empfangeneListe = rezepteList;
     }
 
+
     @NonNull
     @Override
     public RecyclerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -105,4 +106,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             einzelkachel = itemView.findViewById(R.id.cardviewMainpage_id);
         }
     }
+
+    public static boolean istGerade(double number) {
+        return ((number % 2) == 0);
+    }
+
 }

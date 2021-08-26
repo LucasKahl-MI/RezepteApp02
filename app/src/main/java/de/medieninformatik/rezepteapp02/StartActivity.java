@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 /**
  * @author Lucas Kahl m27606
@@ -23,6 +24,8 @@ public class StartActivity extends AppCompatActivity {
      */
     private Button loginButton;
     private Button registButton;
+    private TextView tvlogin;
+    private TextView tvregister;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +49,8 @@ public class StartActivity extends AppCompatActivity {
                 openRegistration();
             }
         });
+
+
 
         /**
          * OnClick-Methode des Login-Buttons
@@ -74,6 +79,12 @@ public class StartActivity extends AppCompatActivity {
      */
     private void openRegistration() {
         Intent intent = new Intent(this, RegisterActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    public void openLogin(View view) {
+        Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
         finish();
     }

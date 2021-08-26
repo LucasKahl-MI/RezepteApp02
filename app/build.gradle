@@ -22,6 +22,11 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+        customDebugType {
+            debuggable true
+        }
+
+
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -35,17 +40,23 @@ dependencies {
     implementation 'com.google.android.material:material:1.4.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
 
+    //Laden der Firebase Bibliothek für die Anbindung der Anmelde-Datenbank
     implementation 'com.google.firebase:firebase-auth:21.0.1'
-
-    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    //Laden der Firebase Bibliothek für die Anbindung der generellen firebase-Datenbak
     implementation 'com.google.firebase:firebase-database:20.0.1'
+
+    //Laden der genutzten RecyclerView Bibliothek
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    //Testing
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.7.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter-params:5.7.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.2'
     testImplementation 'junit:junit:4.+'
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.6.2'
-    testImplementation 'org.junit.jupiter:junit-jupiter'
-    testImplementation 'org.junit.jupiter:junit-jupiter'
-    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testImplementation 'org.mockito:mockito-junit-jupiter:3.11.1'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 }
+
 
 apply plugin: 'com.google.gms.google-services'
