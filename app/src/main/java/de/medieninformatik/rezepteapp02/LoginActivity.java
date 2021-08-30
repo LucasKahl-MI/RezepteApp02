@@ -2,6 +2,7 @@ package de.medieninformatik.rezepteapp02;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -29,6 +30,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText email;
     private EditText passwort;
     private Button login;
+    private ProgressDialog progressDialog;
 
     /**
      * Instanz für die Verbindung zur meiner Firebase Login-Datenbank
@@ -84,10 +86,21 @@ public class LoginActivity extends AppCompatActivity {
         auth.signInWithEmailAndPassword(email, passwort).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
             @Override
             public void onSuccess(AuthResult authResult) {
+
+                /**
+                 * Anzeigen eines Ladebildschirmes als Nutzerfeedback
+                 */
+                progressDialog = new ProgressDialog(LoginActivity.this);
+                progressDialog.show();
+                progressDialog.setContentView(R.layout.progress_view);
+                progressDialog.getWindow().setBackgroundDrawableResource(
+                        android.R.color.transparent
+                );
+
                 Toast.makeText(LoginActivity.this, "Login erfolgreich!", Toast.LENGTH_SHORT).show();
 
                 //Loggingbefehl zum auslesen ob Anmeldung erfolgreich
-                Log.d("success", "Login erfolgreich");
+                Log.i("success", "Login erfolgreich");
                 openMainActivity();
             }
         });

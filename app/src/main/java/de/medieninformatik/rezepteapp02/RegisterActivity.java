@@ -3,6 +3,7 @@ package de.medieninformatik.rezepteapp02;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -30,6 +31,7 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText email;
     private EditText passwort;
     private Button register;
+    private ProgressDialog progressDialog;
 
     /**
      * Instanz für die Verbindung zur meiner Firebase Login-Datenbank
@@ -46,7 +48,6 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-
 
         email = findViewById(R.id.et_email_login);
         passwort = findViewById(R.id.et_passwort_login);
@@ -68,7 +69,6 @@ public class RegisterActivity extends AppCompatActivity {
                     Toast.makeText(RegisterActivity.this, "Passwort zu kurz!", Toast.LENGTH_SHORT).show();
                 } else {
                     registerUser(txt_email, txt_passwort);
-
                 }
             }
         });
@@ -79,6 +79,20 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
+
+
+                    /**
+                     * Anzeigen eines Ladebildschirmes als Nutzerfeedback
+                     */
+                    progressDialog = new ProgressDialog(RegisterActivity.this);
+                    progressDialog.show();
+                    progressDialog.setContentView(R.layout.progress_view);
+                    progressDialog.getWindow().setBackgroundDrawableResource(
+                            android.R.color.transparent
+                    );
+
+
+
                     Toast.makeText(RegisterActivity.this,"Registrierung erfolgreich!" , Toast.LENGTH_SHORT).show();
 
                     //Logging zu Informationszwecken, dass Registrierung erfolgreich war
@@ -98,7 +112,6 @@ public class RegisterActivity extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity.class);
         Log.i("success", "Erfolgreicher Übergang zur MainActivity nach erfolgreicher Registrierung.");
         startActivity(intent);
-
         finish();
     }
 }
